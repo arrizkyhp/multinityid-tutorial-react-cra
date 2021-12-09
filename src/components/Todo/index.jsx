@@ -1,6 +1,7 @@
 import Button from "./Button";
 import { createContext, useState } from "react";
 import TodoList from "./TodoList";
+import { Link, Outlet } from "react-router-dom";
 
 export const TodosContext = createContext({
     setTodosValue: () => {},
@@ -77,6 +78,7 @@ export default function Todo() {
     return (
       <section className="todolist">
         <h1 className="header-todolist">Simple Todo List</h1>
+        <Link to="/todo/about" >Tentang Todo ini</Link>
         {message && <p style={{ margin: 0 }}>{message}</p>}
         <form onSubmit={simpanHandler}>
           <input
@@ -97,6 +99,7 @@ export default function Todo() {
                 <TodoList todosAll={todos} />
             </TodosContext.Provider>
         ) : <p>belum ada todo</p>}
+        <Outlet />
       </section>
     );
 }

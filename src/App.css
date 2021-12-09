@@ -45,3 +45,8 @@ body {
 .btn-delete {
   background-color: #DC3545;
 }
+
+nav {
+  display: flex;
+  gap: 20px;
+}
